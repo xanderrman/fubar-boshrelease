@@ -11,10 +11,13 @@ fail() {
 	echo >&2 $*
 }
 
-if [[ "$infrastructure" != "aws-ec2" && "$infrastructure" != "warden" ]] ; then
-  fail "usage: ./make_manifest <aws-ec2|warden>"
+if [[ "$infrastructure" != "aws-ec2" && "$infrastructure" != "bosh-lite" ]] ; then
+  echo "Invalid infrastructure: ${infrastructure} at line 14"
+  fail "usage: make_manifest <aws-ec2|warden>"
   exit 1
 fi
+
+infrastructure=warden
 
 case "${infrastructure}/${STEMCELL_OS}" in
   (warden/*)       STEMCELL_URL="https://bosh.io/d/stemcells/bosh-warden-boshlite-ubuntu-trusty-go_agent" ;;

@@ -13,7 +13,11 @@ update:
   update_watch_time: 1000-30000
 
 jobs:
-  - name: just_install_packages
+  - name: proxy
+    networks:
+      - name: fubar1
+        static_ips: (( static_ips(0, 1) ))
+  - name: fubar
     networks:
       - name: fubar1
 
@@ -30,8 +34,8 @@ networks:
 - name: fubar1
   type: manual
   subnets:
-  - range: 10.244.10.0/24
+  - range: 10.244.54.0/24
     name: fubar1
-    gateway: 10.244.10.1
+    gateway: 10.244.54.1
     static:
-      - 10.244.10.2 - 10.244.10.60
+      - 10.244.54.2 - 10.244.54.5

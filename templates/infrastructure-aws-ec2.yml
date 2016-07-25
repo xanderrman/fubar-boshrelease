@@ -9,7 +9,13 @@ meta:
     version: latest
 
 jobs:
-  - name: just_install_packages
+  - name: proxy
+    networks:
+    - name: fubar1
+      static_ips: (( static_ips(0, 1) ))
+    persistent_disk: (( grab meta.persistent_disk ))
+
+  - name: fubar
     networks:
       - name: fubar1
     persistent_disk: (( grab meta.persistent_disk ))
