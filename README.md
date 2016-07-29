@@ -6,7 +6,7 @@
 This BOSH Release is intended to be broken in a number of ways. Its purpose is
 to provide an exercise for people new to BOSH to become familiar with how
 BOSH releases work, through finding errors, fixing them, and deploying dev
-releases, until the application is fully functional. Keep in mind, after the [Contributing][contributing]
+releases, until the application is fully functional. Keep in mind, after the [Contributing](#contributing)
 section, there may be documentation in this readme that is intentionally inaccurate.
 
 To get started with this, follow the usage instructions to generate a manifest
