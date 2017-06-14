@@ -37,7 +37,7 @@ BOSH CLI v2
 bosh alias-env my-env -e
 git clone https://github.com/cloudfoundry-community/fubar-boshrelease.git
 cd fubar-boshrelease
-bosh create-release --force && bosh upload-release
+bosh create-release --force && bosh -e my-env upload-release
 ```
 
 Now, you can create the manifest, and attempt to deploy it.
