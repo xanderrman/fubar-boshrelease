@@ -27,17 +27,10 @@ Since this BOSH release has no final builds, you will need to create a dev build
 and upload it directly to your BOSH-Lite director:
 
 ```
-BOSH CLI v1
 bosh target BOSH_HOST
 git clone https://github.com/cloudfoundry-community/fubar-boshrelease.git
 cd fubar-boshrelease
 bosh create release --force && bosh upload release
-
-BOSH CLI v2
-bosh alias-env my-env -e
-git clone https://github.com/cloudfoundry-community/fubar-boshrelease.git
-cd fubar-boshrelease
-bosh create-release --force && bosh -e my-env upload-release
 ```
 
 Now, you can create the manifest, and attempt to deploy it.
